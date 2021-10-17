@@ -112,6 +112,11 @@
           completion-category-defaults nil
           completion-category-overrides '((file (styles partial-completion)))))
 
+  (use-package selectrum
+    :straight t
+    :config
+    (selectrum-mode +1))
+
   (use-package all-the-icons-completion
     :straight t
     :config
