@@ -134,10 +134,26 @@
 
   (use-package flycheck
     :straight t
-    :diminish
+    :bind
+    ("M-p" . 'flycheck-buffer)
+    ("M-[" . 'flycheck-previous-error)
+    ("M-]" . 'flycheck-next-error)
+    :custom
+    (flycheck-check-syntax-automatically nil)
     :hook
     (haskell-mode . flycheck-mode)
     (purescript-mode . flycheck-mode))
+
+  (use-package consult-flycheck
+    :straight t
+    :after flycheck
+    :bind
+    ("M-P" . 'consult-flycheck))
+
+  (use-package flycheck-spago
+    :after flycheck
+    :config
+    (push 'spago flycheck-checkers))
 
   (use-package magit
     :straight t
