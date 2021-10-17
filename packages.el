@@ -248,6 +248,27 @@
     :bind
     ("C-," . 'avy-goto-char))
 
+  (use-package popper
+    :straight t
+    :bind (("C-`"   . popper-toggle-latest)
+           ("M-`"   . popper-cycle)
+           ("C-M-`" . popper-toggle-type))
+    :init
+    (setq popper-reference-buffers
+          '("\\*Messages\\*"
+            "Output\\*$"
+            "\\*Async Shell Command\\*"
+            "*idris-repl*"
+            "*idris-info*"
+            "*idris-holes*"
+            "*idris-process*"
+            "*idris-notes*"
+            "*Embark Actions*"
+            help-mode
+            compilation-mode))
+    (popper-mode +1)
+    (popper-echo-mode +1))
+
   (use-package ace-window
     :straight t
     :defer 0
