@@ -167,14 +167,11 @@
   
   (use-package perspective
     :straight t
-    :disabled
     :custom
     (persp-state-default-file "~/.cache/.persp")
     (persp-initial-frame-name "Main")
     :init
-    (setq persp-mode-prefix-key (kbd "M-p"))
-    :bind ( :map persp-mode-map
-                 ("C-x C-b" . 'switch-to-buffer))
+    (setq persp-mode-prefix-key (kbd "M-i"))
     :config
     (persp-mode))
 
