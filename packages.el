@@ -371,6 +371,7 @@
 
   (use-package psc-ide
     :straight t
+    :disabled
     :bind
     ( :map purescript-mode-map
       ("C-c /" . 'psc-ide-flycheck-insert-suggestion))
