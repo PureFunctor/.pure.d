@@ -349,6 +349,7 @@
   
   (use-package haskell-mode
     :straight t
+    :defer t
     :custom
     (haskell-process-use-presentation-mode t)
     :config
@@ -369,7 +370,8 @@
     (add-hook 'haskell-mode-hook 'haskell-mode-setup))
 
   (use-package company-ghci
-    :straight t)
+    :straight t
+    :after haskell-mode)
 
   (use-package emmet-mode
     :straight t
@@ -377,10 +379,14 @@
     (mhtml-mode . emmet-mode))
 
   (use-package rustic
-    :straight t)
+    :straight t
+    :defer t)
 
   (use-package eglot
     :straight t
+    :defer t
+    :custom
+    (rustic-lsp-client 'eglot))
     :custom
     (rustic-lsp-client 'eglot)))
 
