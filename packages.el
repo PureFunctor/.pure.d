@@ -418,8 +418,17 @@
     :defer t
     :custom
     (rustic-lsp-client 'eglot))
+
+  (use-package prop-menu
+    :straight t)
+
+  (use-package idris-mode
+    :straight t
+    :defer t
     :custom
-    (rustic-lsp-client 'eglot)))
+    (idris-interpreter-path "idris2")
+    (idris-repl-history-file "~/.idris2/idris-history.eld"))
+  )
 
 (defun packages/entry ()
   "Entry point for `packages.el`"
