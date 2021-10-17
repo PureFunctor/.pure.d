@@ -85,11 +85,6 @@
 
 (defun packages/tools ()
   "Load tools."
-  (use-package vertico
-    :straight t
-    :init
-    (vertico-mode))
-
   (use-package consult
     :straight t
     :bind
