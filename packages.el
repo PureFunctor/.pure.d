@@ -238,7 +238,7 @@
     :bind
     ("C-c n l" . org-roam-buffer-toggle)
     ("C-c n f" . pure/org-roam-top-level-node-find)
-    ("C-c n i" . org-roam-node-insert)))
+    ("C-c n i" . pure/org-roam-node-insert))
 
 (defun packages/utils ()
   "Load utils."
