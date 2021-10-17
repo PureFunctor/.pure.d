@@ -175,6 +175,15 @@
     :config
     (persp-mode))
 
+  (use-package embark
+    :straight t
+    :bind
+    ("M-S-\\" . 'embark-dwim)
+    ("M-\\" . 'embark-act)
+    ("C-h B" . 'embark-bindings)
+    :init
+    (setq prefix-help-command #'embark-prefix-help-command))
+
   (use-package project
     :straight t)
 
