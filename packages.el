@@ -72,6 +72,7 @@
     :after org
     :custom
     (org-superstar-leading-bullet ?\s)
+    (org-superstar-remove-leading-stars t)
     :hook
     (org-mode . org-superstar-mode))
 
