@@ -132,12 +132,6 @@
     :config
     (global-company-mode))
 
-  (use-package company-box
-    :straight t
-    :diminish
-    :hook
-    (company-mode . company-box-mode))
-
   (use-package flycheck
     :straight t
     :diminish
