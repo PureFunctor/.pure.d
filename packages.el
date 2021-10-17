@@ -157,6 +157,7 @@
 
   (use-package magit
     :straight t
+    :defer t
     :custom
     (fill-column 72)
     (git-commit-summary-max-length 50)
