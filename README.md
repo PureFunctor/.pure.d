@@ -1,11 +1,12 @@
 # .pure.d
-Emacs configuration.
+Vitriol Emacs Distribution.
 
 # Installation
 Clone this repository to `"~/.pure.d/"` and add the following to `init.el`
 ```lisp
 (add-to-list 'load-path "~/.pure.d/")
 (add-to-list 'load-path "~/.pure.d/lisp")
-(require 'config)
-(config/entry)
+(load "vitriol-bootstrap.el")
+(require 'vitriol-config)
+(vitriol/config/entry)
 ```
