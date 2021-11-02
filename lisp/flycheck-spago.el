@@ -1,5 +1,8 @@
-;;; -*- lexical-binding: t; -*-
 ;;; flymake-spago.el --- Spago backend for Flymake
+;;;
+;;; -*- lexical-binding: t -*-
+
+(defvar flycheck-spago-dhall-file "tests.dhall")
 
 (defun flycheck-spago-working-directory (_checker)
   "Find spago.dhall in the parent directory of the current buffer."
@@ -41,7 +44,7 @@
 
 (flycheck-define-checker spago
   "Spago backend for `flycheck-mode'."
-  :command ("spago" "-q" "build" "-u" "--censor-lib --json-errors --stash")
+  :command ("spago" "-x" (eval flycheck-spago-dhall-file) "-q" "build" "-u" "--censor-lib --json-errors --stash")
   :modes purescript-mode
   :working-directory flycheck-spago-working-directory
   :error-parser flycheck-spago-error-parser)
