@@ -20,7 +20,7 @@
           "|"
           (format " ${title:%i} " pure/org-roam-longest-title)
           "|"
-          (propertize "${tags:10}" 'face 'org-tag)))
+          (propertize " ${tags:20}" 'face 'org-tag)))
 
 (defconst pure/org-roam-node-template-prefixes
       '(("parent" . "p:") ("tags" . "#") ("title" . "t:")))
