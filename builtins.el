@@ -17,7 +17,7 @@
 (defun builtins/binds ()
   "Load global binds."
   (setq-default indent-tabs-mode nil)
-  (setq-default cursor-type 'bar)
+  (setq-default cursor-type 'box)
   (setq
     inhibit-startup-message t
     require-final-newline t
