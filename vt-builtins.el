@@ -1,7 +1,7 @@
 (require 'ansi-color)
-(require 'vitriol-constants)
+(require 'vt-constants)
 
-(defun vitriol/builtins/modes ()
+(defun vt/builtins/modes ()
   "Load global modes."
   (menu-bar-mode   -1)
   (tool-bar-mode   -1)
@@ -12,9 +12,9 @@
   (electric-pair-mode)
   (global-auto-revert-mode)
   (add-hook 'prog-mode-hook 'display-line-numbers-mode)
-  (add-hook 'compilation-filter-hook 'vitriol/builtins/colorize-compilation-buffer))
+  (add-hook 'compilation-filter-hook 'vt/builtins/colorize-compilation-buffer))
 
-(defun vitriol/builtins/binds ()
+(defun vt/builtins/binds ()
   "Load global binds."
   (setq-default indent-tabs-mode nil)
   (setq-default cursor-type 'box)
@@ -29,33 +29,33 @@
     shift-select-mode nil
     help-window-select t))
 
-(defun vitriol/builtins/fonts ()
+(defun vt/builtins/fonts ()
   "Load font configuration."
   (set-face-attribute 'default nil :font "Mononoki" :height 108)
   (set-face-attribute 'fixed-pitch nil :font "Mononoki" :height 108)
   (set-face-attribute 'variable-pitch nil :font "Cormorant Garamond" :height 108))
 
-(defun vitriol/builtins/frame ()
+(defun vt/builtins/frame ()
   "Load frame configuration."
   (set-frame-parameter (selected-frame) 'alpha '(95 . 90))
   (add-to-list 'default-frame-alist '(alpha . (95 . 90))))
 
-(defun vitriol/builtins/advice ()
+(defun vt/builtins/advice ()
   (defadvice term-handle-exit
     (after term-kill-buffer-on-exit activate)
   (kill-buffer)))
 
-(defun vitriol/builtins/entry ()
-  "Entry point for `vitriol-builtins.el'."
-  (vitriol/builtins/modes)
-  (vitriol/builtins/binds)
-  (vitriol/builtins/fonts)
-  (vitriol/builtins/frame)
-  (vitriol/builtins/advice))
+(defun vt/builtins/entry ()
+  "Entry point for `vt-builtins.el'."
+  (vt/builtins/modes)
+  (vt/builtins/binds)
+  (vt/builtins/fonts)
+  (vt/builtins/frame)
+  (vt/builtins/advice))
 
-(defun vitriol/builtins/colorize-compilation-buffer ()
+(defun vt/builtins/colorize-compilation-buffer ()
   (read-only-mode)
   (ansi-color-apply-on-region compilation-filter-start (point))
   (read-only-mode))
 
-(provide 'vitriol-builtins)
+(provide 'vt-builtins)

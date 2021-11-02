@@ -9,4 +9,4 @@
 (defconst user-snippet-directory
   (concat user-emacs-directory "snippets"))
 
-(provide 'vitriol-constants)
+(provide 'vt-constants)

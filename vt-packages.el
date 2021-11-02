@@ -1,4 +1,4 @@
-(defun vitriol/packages/setup ()
+(defun vt/packages/setup ()
   "Install and setup packages."
   (let ((straight-current-profile 'pinned))
     (straight-use-package 'setup)
@@ -70,9 +70,9 @@
              "M-y" consult-yank-pop))
 
   (setup project
-    (:require vitriol-project)
+    (:require vt-project)
     (:with-map project-prefix-map
-      (:bind "t" vitriol/project-ansi-term)))
+      (:bind "t" vt/project-ansi-term)))
   
   (setup perspective
     (:straight-x perspective "53348cea0f46655c4c072da5984f6a652726df4f")
@@ -133,14 +133,14 @@
     (:hook-into dired-mode-hook))
 
   (setup org
-    (:require vitriol-org-face-mode)
+    (:require vt-org-face-mode)
     (:defer)
     (:option org-directory "~/PureFunctor/Org/Agenda"
              org-agenda-files (list org-directory)
              org-hide-emphases-markers t
              org-edit-src-content-indentation 0)
     (:hook org-indent-mode
-           vitriol/org-face-mode))
+           vt/org-face-mode))
 
   (setup org-roam
     (setq org-roam-v2-ack t)    
@@ -150,10 +150,10 @@
     (:option org-roam-directory "~/PureFunctor/Org/Roam"
              org-roam-completion-everywhere t)
     
-    (:require vitriol-org-roam-utils)
+    (:require vt-org-roam-utils)
     (:global "C-c n l" org-roam-buffer-toggle
-             "C-c n f" vitriol/org-roam-node-find
-             "C-c n i" vitriol/org-roam-node-insert)
+             "C-c n f" vt/org-roam-node-find
+             "C-c n i" vt/org-roam-node-insert)
 
     (:when-loaded
       (org-roam-setup)))
@@ -164,8 +164,8 @@
     (:option git-commit-summary-max-length 50)
     (:option transient-default-level 5)))
 
-(defun vitriol/packages/entry ()
-  "Entry point for `vitriol-packages.el'."
-  (vitriol/packages/setup))
+(defun vt/packages/entry ()
+  "Entry point for `vt-packages.el'."
+  (vt/packages/setup))
 
-(provide 'vitriol-packages)
+(provide 'vt-packages)

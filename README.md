@@ -6,7 +6,7 @@ Clone this repository to `"~/.pure.d/"` and add the following to `init.el`
 ```lisp
 (add-to-list 'load-path "~/.pure.d/")
 (add-to-list 'load-path "~/.pure.d/lisp")
-(load "vitriol-bootstrap.el")
-(require 'vitriol-config)
-(vitriol/config/entry)
+(load "vt-bootstrap.el")
+(require 'vt-config)
+(vt/config/entry)
 ```
