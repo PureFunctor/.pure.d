@@ -49,8 +49,8 @@
   (builtins/frame))
 
 (defun builtins/colorize-compilation-buffer ()
-  (toggle-read-only)
+  (read-only-mode)
   (ansi-color-apply-on-region compilation-filter-start (point))
-  (toggle-read-only))
+  (read-only-mode))
 
 (provide 'builtins)
