@@ -1,27 +1,3 @@
-(defun packages/bootstrap ()
-  "Bootstrap `straight.el`."
-  (defvar bootstrap-version)
-  (let ((bootstrap-file
-         (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-        (bootstrap-version 5))
-    (unless (file-exists-p bootstrap-file)
-      (with-current-buffer
-          (url-retrieve-synchronously
-           "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
-           'silent 'inhibit-cookies)
-        (goto-char (point-max))
-        (eval-print-last-sexp)))
-    (load bootstrap-file nil 'nomessage))
-  (straight-use-package 'use-package)
-  (straight-use-package 'diminish))
-
-(defun packages/extra ()
-  "Load extra."
-  (diminish 'eldoc-mode)
-  (diminish 'auto-revert-mode)
-  (diminish 'variable-pitch-mode)
-  (diminish 'visual-line-mode))
-
 (defun packages/theme ()
   "Load theme."
   (use-package doom-themes
@@ -35,13 +11,6 @@
 
   (use-package all-the-icons
     :straight t)
-
-  (use-package all-the-icons-ivy-rich
-    :straight t
-    :disabled
-    :after ivy-rich
-    :config
-    (all-the-icons-ivy-rich-mode))
 
   (use-package diredfl
     :straight t
@@ -86,6 +55,11 @@
 
 (defun packages/tools ()
   "Load tools."
+  (use-package flyspell
+    :config
+    (define-key flyspell-mode-map (kbd "C-.") nil)
+    (define-key flyspell-mode-map (kbd "C-,") nil))
+
   (use-package consult
     :straight t
     :bind
@@ -99,7 +73,7 @@
        (when-let (project (project-current))
          (car (project-roots project)))))
     (consult-ripgrep-args
-     "rg . --line-buffered --color=never --max-columns=1000 --path-separator /   --smart-case --no-heading --line-number --hidden -g !.git/"))
+     "rg . --line-buffered --color=never --max-columns=1000 --path-separator / --smart-case --no-heading --line-number --hidden -g !.git/"))
 
   (use-package marginalia
     :straight t
@@ -187,6 +161,15 @@
 
   (use-package project
     :straight t)
+
+  (use-package pure-project
+    :after project
+    :bind (:map project-prefix-map
+                ("t" . 'pure/project-ansi-term)))
+
+  (use-package ibuffer
+    :bind
+    ("C-x C-b" . 'ibuffer))
 
   (use-package vterm
     :straight t
@@ -304,20 +287,14 @@
   (use-package ace-window
     :straight t
     :defer 0
+    :custom
+    (aw-dispatch-always t)
+    (aw-display-mode-overlay nil)
+    (aw-keys '(?a ?s ?d ?f ?q ?w ?e ?r))
+    :config
+    (ace-window-display-mode)
     :bind
     ("M-o" . 'ace-window))
-  
-  (use-package rotate
-    :straight t
-    :defer 0
-    :bind
-    ("C-c w m h" . 'rotate:main-horizontal)
-    ("C-c w m v" . 'rotate:main-vertical)
-    ("C-c w t" . 'rotate:tiled)
-    ("C-c w s" . 'rotate-window)
-    ("C-c w v" . 'split-window-right)
-    ("C-c w h" . 'split-window-below)
-    ("C-c w d" . 'delete-window))
 
   (use-package which-key
     :straight t
@@ -360,26 +337,19 @@
 (defun packages/langs ()
   "Load langs."
   (use-package purescript-mode
-    :straight t
+    :straight
+    (purescript-mode
+     :type git
+     :flavor melpa
+     :files (:defaults "NEWS" "snippets" "purescript-mode-pkg.el")
+     :host github
+     :repo "PureFunctor/purescript-mode")
     :hook
     (purescript-mode . turn-on-purescript-indentation)
     (purescript-indentation-mode . (lambda () (diminish 'purescript-indentation-mode)))
-    ;; (purescript-mode . turn-on-purescript-unicode-input-method)
     :mode
-    ("\\.purs$" . 'purescript-mode)
-    :config
-    (modify-syntax-entry ?\\ "w" purescript-mode-syntax-table))
+    ("\\.purs$" . 'purescript-mode))
 
-  (use-package psc-ide
-    :straight t
-    :disabled
-    :bind
-    ( :map purescript-mode-map
-      ("C-c /" . 'psc-ide-flycheck-insert-suggestion))
-    :after purescript-mode
-    :hook
-    (purescript-mode . psc-ide-mode))
-  
   (use-package haskell-mode
     :straight t
     :defer t
@@ -408,6 +378,7 @@
 
   (use-package emmet-mode
     :straight t
+    :defer t
     :hook
     (mhtml-mode . emmet-mode))
 
@@ -422,7 +393,8 @@
     (rustic-lsp-client 'eglot))
 
   (use-package prop-menu
-    :straight t)
+    :straight t
+    :defer t)
 
   (use-package idris-mode
     :straight t
@@ -430,16 +402,10 @@
     :custom
     (idris-interpreter-path "idris2")
     (idris-repl-history-file "~/.idris2/idris-history.eld"))
-  )
 
-(defun packages/entry ()
-  "Entry point for `packages.el`"
-  (packages/bootstrap)
-  (packages/extra)
-  (packages/theme)
-  (packages/tools)
-  (packages/utils)
-  (packages/langs)
-  (packages/major))
+  (use-package dhall-mode
+    :straight t
+    :defer t)
+  )
 
 (provide 'packages)
