@@ -147,4 +147,12 @@
   (:option git-commit-summary-max-length 50)
   (:option transient-default-level 5))
 
+(setup flycheck
+  (:straight-x flycheck "784f184cdd9f9cb4e3dbb997c09d93e954142842")
+  (:global "M-p" flycheck-buffer
+           "M-[" flycheck-previous-error
+           "M-]" flycheck-next-error)
+  (:option flycheck-check-syntax-automatically nil)
+  (:hook-into purs-mode))
+
 (provide 'vt-packages)

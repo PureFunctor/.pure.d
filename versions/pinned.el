@@ -1,5 +1,6 @@
-(("ws-butler" . "e3a38d93e01014cd47bf5af4924459bd145fd7c4")
+(("flycheck" . "784f184cdd9f9cb4e3dbb997c09d93e954142842")
  ("magit" . "f44f6c14500476d918e9c01de8449edb20af4113")
+ ("ws-butler" . "e3a38d93e01014cd47bf5af4924459bd145fd7c4")
  ("wakatime-mode" . "8dfe67c1581a0f3688c572dfdb5f8f71d3f874a0")
  ("org-roam" . "3e47f198c7b6c3254944d98357e41840e5e1b102")
  ("purs-mode" . "8a719b5f5a5f10373ef98fe849a0b04cbd34c4cf")
