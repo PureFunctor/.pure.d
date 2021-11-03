@@ -1,0 +1,34 @@
+* .pure.d - Vitriol Emacs
+A lightweight =setup.el=-based Emacs configuration.
+
+* Installation
+Clone this repository to =~/.pure.d/= and add the following lines to =early-init.el=,
+
+#+begin_src elisp
+;; Add to load-path
+(add-to-list 'load-path "~/.pure.d/")
+(add-to-list 'load-path "~/.pure.d/lisp")
+
+;; Disable flashbang
+(load-theme 'wombat t)
+
+;; Load up straight.el
+(load "vt-bootstrap.el")
+
+;; Disable UI stuff
+(setq default-frame-alist               
+      '((tool-bar-lines . 0)            
+        (menu-bar-lines . 0)            
+        (vertical-scroll-bars . nil)          
+        (horizontal-scroll-bars . nil)
+        (alpha . (95 . 90))
+        (left-fringe . 0)
+        (right-fringe . 0)))
+#+end_src
+
+then add the following lines to =init.el=
+
+#+begin_src elisp
+(require 'vt-config)
+(vt/config/entry)
+#+end_src
