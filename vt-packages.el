@@ -176,6 +176,11 @@
     (:when-loaded
       (global-wakatime-mode)
       (diminish 'wakatime-mode)))
+
+  (setup ws-butler
+    (:straight-x ws-butler "e3a38d93e01014cd47bf5af4924459bd145fd7c4")
+    (:defer)
+    (:hook-into prog-mode))
   
   (setup magit
     (:straight-x magit "f44f6c14500476d918e9c01de8449edb20af4113")
