@@ -3,11 +3,6 @@
 
 (defun vt/builtins/modes ()
   "Load global modes."
-  (menu-bar-mode   -1)
-  (tool-bar-mode   -1)
-  (scroll-bar-mode -1)
-  (tooltip-mode    -1)
-  (fringe-mode      0)
   (column-number-mode)
   (electric-pair-mode)
   (global-auto-revert-mode)
@@ -16,8 +11,8 @@
 
 (defun vt/builtins/binds ()
   "Load global binds."
-  (setq-default indent-tabs-mode nil)
-  (setq-default cursor-type 'box)
+  (setq-default indent-tabs-mode nil
+                cursor-type 'box)
   (setq
     inhibit-startup-message t
     require-final-newline t
@@ -35,11 +30,6 @@
   (set-face-attribute 'fixed-pitch nil :font "Mononoki" :height 108)
   (set-face-attribute 'variable-pitch nil :font "Cormorant Garamond" :height 108))
 
-(defun vt/builtins/frame ()
-  "Load frame configuration."
-  (set-frame-parameter (selected-frame) 'alpha '(95 . 90))
-  (add-to-list 'default-frame-alist '(alpha . (95 . 90))))
-
 (defun vt/builtins/advice ()
   (defadvice term-handle-exit
     (after term-kill-buffer-on-exit activate)
@@ -50,7 +40,6 @@
   (vt/builtins/modes)
   (vt/builtins/binds)
   (vt/builtins/fonts)
-  (vt/builtins/frame)
   (vt/builtins/advice))
 
 (defun vt/builtins/colorize-compilation-buffer ()
