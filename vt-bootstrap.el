@@ -15,4 +15,7 @@
       '((nil . "~/.pure.d/versions/default.el")
         (pinned . "~/.pure.d/versions/pinned.el")))
 
-(require 'straight-x)
+(let ((straight-current-profile 'pinned))
+  (straight-use-package 'setup)
+  (add-to-list 'straight-x-pinned-packages
+               '("setup" . "5d281024dea8d670ef5d84f127c528f64e1e0865")))
