@@ -10,7 +10,7 @@
     (lambda (recipe-or-name revision)
       (let* ((recipe (if (symbolp recipe-or-name)
                          (straight-recipes-retrieve recipe-or-name)
-                       (recipe-or-name)))
+                       recipe-or-name))
              )
 	(if (eq recipe 'nil)
 	    `,(setup-quit (format "Cannot find recipe for '%s'" recipe-or-name))
