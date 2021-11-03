@@ -1,5 +1,6 @@
 (("magit" . "f44f6c14500476d918e9c01de8449edb20af4113")
  ("org-roam" . "3e47f198c7b6c3254944d98357e41840e5e1b102")
+ ("purs-mode" . "afdaf06ff814dece187846ba8448cbfe679a4fee")
  ("diredfl" . "4ca32658aebaf2335f0368a0fd08f52eb1aee960")
  ("marginalia" . "09d8ab38a5a4aa55a83968dc3e454d11fee05255")
  ("orderless" . "62f71c34baca0b7d0adeab4a1c07d85ffcee80d9")

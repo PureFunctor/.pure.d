@@ -142,6 +142,15 @@
     (:hook org-indent-mode
            vt/org-face-mode))
 
+  (setup purs-mode
+    (:straight-x
+     (purs-mode :type git
+                :flavor melpa
+                :files (:defaults "purs-mode-pkg.el")
+                :host github
+                :repo "PureFunctor/purs-mode")
+     "8a719b5f5a5f10373ef98fe849a0b04cbd34c4cf"))
+
   (setup org-roam
     (setq org-roam-v2-ack t)    
     (:straight-x org-roam "3e47f198c7b6c3254944d98357e41840e5e1b102")
@@ -157,6 +166,16 @@
 
     (:when-loaded
       (org-roam-setup)))
+
+  (setup wakatime-mode
+    (:straight-x wakatime-mode "8dfe67c1581a0f3688c572dfdb5f8f71d3f874a0")
+    (:defer)
+    (:option wakatime-api-key (with-temp-buffer
+                                (insert-file-contents "~/Secrets/wakatime-api-key")
+                                (string-trim (buffer-string))))
+    (:when-loaded
+      (global-wakatime-mode)
+      (diminish 'wakatime-mode)))
   
   (setup magit
     (:straight-x magit "f44f6c14500476d918e9c01de8449edb20af4113")
