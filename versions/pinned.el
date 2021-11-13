@@ -1,4 +1,5 @@
-(("flycheck" . "784f184cdd9f9cb4e3dbb997c09d93e954142842")
+(("visual-fill-column" . "ae4edc225acea12a035c0586185847306ecb06ef")
+ ("flycheck" . "784f184cdd9f9cb4e3dbb997c09d93e954142842")
  ("magit" . "f44f6c14500476d918e9c01de8449edb20af4113")
  ("ws-butler" . "e3a38d93e01014cd47bf5af4924459bd145fd7c4")
  ("wakatime-mode" . "8dfe67c1581a0f3688c572dfdb5f8f71d3f874a0")

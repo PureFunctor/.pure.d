@@ -110,6 +110,7 @@
   (:hook-into org-mode-hook))
 
 (setup (:straight visual-fill-column)
+  (:pin "visual-fill-column" "ae4edc225acea12a035c0586185847306ecb06ef")
   (:defer)
   (:option visual-fill-column-width 120
            visual-fill-column-center-text t)
