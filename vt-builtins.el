@@ -25,6 +25,10 @@
 (set-face-attribute 'fixed-pitch nil :font "Mononoki" :height 105)
 (set-face-attribute 'variable-pitch nil :font "Mononoki" :height 105)
 
+(set-fontset-font "fontset-default"
+                  'unicode
+                  '("Fira Code" . "iso10646-1"))
+
 (defadvice term-handle-exit
     (after term-kill-buffer-on-exit activate)
   (kill-buffer))
