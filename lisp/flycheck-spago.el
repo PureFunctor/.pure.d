@@ -1,6 +1,6 @@
-;;; flymake-spago.el --- Spago backend for Flymake
-;;;
-;;; -*- lexical-binding: t -*-
+;;; flymake-spago.el --- Spago backend for Flymake -*- lexical-binding: t -*-
+
+(require 'flycheck)
 
 (defvar flycheck-spago-dhall-file "tests.dhall")
 
@@ -45,8 +45,10 @@
 (flycheck-define-checker spago
   "Spago backend for `flycheck-mode'."
   :command ("spago" "-x" (eval flycheck-spago-dhall-file) "-q" "build" "-u" "--censor-lib --json-errors --stash")
-  :modes purescript-mode
+  :modes purs-mode
   :working-directory flycheck-spago-working-directory
   :error-parser flycheck-spago-error-parser)
+
+(add-to-list 'flycheck-checkers 'spago)
 
 (provide 'flycheck-spago)
