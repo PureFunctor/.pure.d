@@ -17,14 +17,6 @@ first RECIPE's package."
                      (car recipe)
                    recipe))))
 
-(setup-define :pin
-  (lambda (repository revision)
-    `(add-to-list 'straight-x-pinned-packages
-                  '(,repository . ,revision)))
-  :documentation
-  "Add a REPOSITORY and a REVISION to `straight-x-pinned-packages'."
-  :repeatable t)
-
 (setup-define :defer
   (lambda (&rest time)
     `(run-with-idle-timer ,(or (car time) 1) nil 'require ',(setup-get 'feature)))
@@ -41,16 +33,6 @@ first RECIPE's package."
       `(with-eval-after-load ',(setup-get 'feature)
          ,(macroexp-progn body))))
   )
-;;     (let ((self (setup-get 'mode))
-;;           (body ()))
-;;       (when (and (not (memq self modes)) (length> modes 1) (eq (car modes) t))
-;;         (pop modes)
-;;         (push self modes))
-;;       (dolist (mode modes `(with-eval-after-load ',(setup-get 'feature) ,(macroexp-progn body)))
-;;         (push `(diminish ',mode) body))))
-;;   :documentation
-;;   "Diminish MODES after loading the FEATURE.
-;; A FEATURE's MODE is always included in MODES.")
 
 (setup-define :global-unbind
   (lambda (key)
