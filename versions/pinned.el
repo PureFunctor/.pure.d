@@ -13,7 +13,7 @@
  ("emacs-which-key" . "4790a14683a2f3e4f72ade197c78e4c0af1cdd4b")
  ("ace-window" . "c7cb315c14e36fded5ac4096e158497ae974bec9")
  ("perspective-el" . "53348cea0f46655c4c072da5984f6a652726df4f")
- ("consult" . "ebb62563127a4b9442148372f897efb7baef61d2")
+ ("consult" . "c2fed383c9c555ed017200a22efad0a9734725b0")
  ("emacs-dashboard" . "a19868f2fb8f7fc4132b4e9bfac5cdd65f245181")
  ("diminish.el" . "6ec6ebc391371418efc6c98d70b013f34af5a2ee")
  ("emacs-doom-themes" . "3e6f5d9ce129ac6fc0f466eb6f5518593625578f")
