@@ -9,4 +9,9 @@
 (defconst user-snippet-directory
   (concat user-emacs-directory "snippets"))
 
+(defconst user-wakatime-key
+  (with-temp-buffer
+    (insert-file-contents "~/Secrets/wakatime-api-key")
+    (string-trim (buffer-string))))
+
 (provide 'vt-constants)
