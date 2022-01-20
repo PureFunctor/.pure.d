@@ -4,7 +4,7 @@
  ("ws-butler" . "e3a38d93e01014cd47bf5af4924459bd145fd7c4")
  ("wakatime-mode" . "8dfe67c1581a0f3688c572dfdb5f8f71d3f874a0")
  ("org-roam" . "3e47f198c7b6c3254944d98357e41840e5e1b102")
- ("purs-mode" . "e747d4e636e620069176e661b8b0635014f140dc")
+ ("purs-mode" . "490c67a58446f90ebf58f6a58edbb33fc71d27a9")
  ("org-superstar-mode" . "03be6c0a3081c46a59b108deb8479ee24a6d86c0")
  ("diredfl" . "4ca32658aebaf2335f0368a0fd08f52eb1aee960")
  ("marginalia" . "09d8ab38a5a4aa55a83968dc3e454d11fee05255")
