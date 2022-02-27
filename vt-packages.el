@@ -20,7 +20,8 @@
          "b" dashboard-previous-section)
   (:option dashboard-center-content t
            dashboard-banner-logo-title "Vitriol Emacs"
-           dashboard-startup-banner "~/.pure.d/logo.png")
+           dashboard-startup-banner "~/.pure.d/logo.png"
+           dashboard-items '((recents . 5) (agenda . 5)))
   (dashboard-setup-startup-hook))
 
 (setup (:straight consult)
@@ -43,6 +44,10 @@
            aw-keys '(?a ?s ?d ?f ?q ?w ?e ?r))
   (:global "M-o" ace-window)
   (ace-window-display-mode))
+
+(setup (:straight avy)
+  (:global "M-g w" avy-goto-word-0
+           "M-g l" avy-goto-line))
 
 (setup (:straight which-key)
   (:diminish t)
@@ -82,10 +87,7 @@
            org-edit-src-content-indentation 0
            fill-column 100)
   (:when-loaded
-    (add-to-list 'org-src-lang-modes '("purescript" . purs)))
-  (setup (:require vt-org-face-mode))
-  (:hook org-indent-mode vt/org-face-mode
-         (lambda () (fringe-mode 8))))
+    (add-to-list 'org-src-lang-modes '("purescript" . purs))))
 
 (setup (:straight org-superstar)
   (:option org-superstar-leading-bullet " "
