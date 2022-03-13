@@ -40,6 +40,12 @@
     (:bind "M-a" marginalia-cycle))
   (marginalia-mode))
 
+;;;; Which Key
+(straight-use-package 'which-key)
+
+(setup (:require which-key)
+  (which-key-mode))
+
 (provide 'pure-completions)
 
 ;;; pure-completions.el ends here

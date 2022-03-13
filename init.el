@@ -18,3 +18,4 @@
 (require 'pure-navigation)
 (require 'pure-projects)
 (require 'pure-org)
+(require 'pure-lang)

@@ -20,7 +20,7 @@
          "b" dashboard-previous-section)
   (:option dashboard-center-content t
            dashboard-banner-logo-title "Pure's Emacs"
-           dashboard-startup-banner "~/.pure.d/logo.png"
+           dashboard-startup-banner "~/.emacs.d/logo.png"
            dashboard-items '((recents . 5) (agenda . 5))
            dashboard-set-heading-icons t
            dashboard-set-file-icons t)
@@ -34,6 +34,18 @@
 (setup (:require doom-themes)
   (load-theme 'doom-horizon t))
 
+;;;; Mini Modeline
+(straight-use-package 'mini-modeline)
+
+(setup (:require mini-modeline)
+  (mini-modeline-mode))
+
 (provide 'pure-ui)
+
+;;;; Diredfl
+(straight-use-package 'diredfl)
+
+(setup (:require diredfl)
+  (:hook-into dired-mode-hook))
 
 ;;; pure-ui.el ends here

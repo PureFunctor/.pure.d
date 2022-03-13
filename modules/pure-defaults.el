@@ -4,9 +4,9 @@
 ;;
 ;; This module contains configuration regarding Emacs' defaults.
 
-(set-face-attribute 'default nil :font "Comic Shanns" :height 110)
-(set-face-attribute 'fixed-pitch nil :font "Comic Shanns " :height 110)
-(set-face-attribute 'variable-pitch nil :font "Comic Shanns" :height 110)
+(set-face-attribute 'default nil :font "Fira Code Retina" :height 100)
+(set-face-attribute 'fixed-pitch nil :font "Fira Code Retina " :height 100)
+(set-face-attribute 'variable-pitch nil :font "Fira Code Retina" :height 100)
 
 (column-number-mode)
 (electric-pair-mode)

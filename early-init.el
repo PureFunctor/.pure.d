@@ -9,8 +9,8 @@
 (setq help-window-select t)
 (setq inhibit-startup-message t)
 (setq require-final-newline t)
-(setq backup-directory-alist '((".*" . "saves")))
-(setq auto-save-file-name-transforms '((".*" "saves" t)))
+(setq backup-directory-alist '((".*" . "~/.emacs.d/saves")))
+(setq auto-save-file-name-transforms '((".*" "~/.emacs.d/saves" t)))
 
 (push '(tool-bar-lines . 0) default-frame-alist)
 (push '(menu-bar-lines . 0) default-frame-alist)
