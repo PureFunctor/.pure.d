@@ -14,7 +14,7 @@
   (:option aw-dispatch-always t
            aw-display-mode-overlay t
            aw-keys '(?a ?s ?d ?f ?q ?w ?e ?r))
-  (:global "C-c w" ace-window)
+  (:global "M-o" ace-window)
   (ace-window-display-mode))
 
 ;;;; Avy
@@ -29,5 +29,11 @@
   (:global "C-x C-b" ibuffer))
 
 (provide 'pure-navigation)
+
+;;; Ctrlf
+(straight-use-package 'ctrlf)
+
+(setup (:require ctrlf)
+  (ctrlf-mode))
 
 ;;; pure-navigation.el ends here
