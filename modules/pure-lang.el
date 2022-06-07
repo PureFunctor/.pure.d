@@ -10,9 +10,12 @@
 ;;;; LSP
 (straight-use-package 'lsp-mode)
 
-(setq lsp-keymap-prefix "M-l")
+(setq lsp-keymap-prefix "C-c l")
 (setup (:require lsp-mode)
-  (:option lsp-lens-enable nil)
+  (:option lsp-lens-enable nil
+           lsp-headerline-breadcrumb-enable nil
+           lsp-modeline-code-actions-enable nil
+           lsp-modeline-diagnostics-enable nil)
   (:when-loaded
     (add-to-list 'lsp-language-id-configuration '(purs-mode . "purescript"))
     (lsp-register-client
@@ -20,6 +23,16 @@
       :new-connection (lsp-stdio-connection '("purescript-language-server" "--stdio"))
       :activation-fn (lsp-activate-on "purescript")
       :server-id 'purescript-language-server))))
+
+(straight-use-package 'company)
+
+(setup (:require company-mode)
+  (global-company-mode))
+
+(straight-use-package 'yasnippet)
+
+(setup (:require yasnippet)
+  (yas-global-mode))
 
 ;;;; Flycheck
 (straight-use-package 'flycheck)
@@ -54,6 +67,11 @@
 (add-to-list 'load-path "~/Vitriol/purs-mode")
 (setup (:require purs-mode)
   (:hook lsp purs-indentation-mode))
+
+;;;; Rust
+(straight-use-package 'rustic)
+(setup (:require rustic)
+  (:hook lsp))
 
 ;;;; Markdown
 (straight-use-package 'markdown-mode)
