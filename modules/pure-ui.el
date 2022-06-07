@@ -19,7 +19,7 @@
          "f" dashboard-next-section
          "b" dashboard-previous-section)
   (:option dashboard-center-content t
-           dashboard-banner-logo-title "Pure's Emacs"
+           dashboard-banner-logo-title "Emacs!!!"
            dashboard-startup-banner "~/.emacs.d/logo.png"
            dashboard-items '((recents . 5) (agenda . 5))
            dashboard-set-heading-icons t
@@ -32,7 +32,8 @@
 (straight-use-package 'doom-themes)
 
 (setup (:require doom-themes)
-  (load-theme 'doom-horizon t))
+  (setq doom-horizon-brighter-comments t)
+  (load-theme 'doom-tomorrow-night t))
 
 ;;;; Mini Modeline
 (straight-use-package 'mini-modeline)
@@ -47,5 +48,18 @@
 
 (setup (:require diredfl)
   (:hook-into dired-mode-hook))
+
+;;;; Highlight Indent Guides
+(straight-use-package 'highlight-indent-guides)
+
+(setup (:require highlight-indent-guides)
+  (setq highlight-indent-guides-method 'character)
+  (:hook-into prog-mode-hook))
+
+;;;; Rainbow Delimiters
+(straight-use-package 'rainbow-delimiters)
+
+(setup (:require rainbow-delimiters)
+  (:hook-into prog-mode-hook))
 
 ;;; pure-ui.el ends here
