@@ -35,12 +35,6 @@
   (setq doom-horizon-brighter-comments t)
   (load-theme 'doom-tomorrow-night t))
 
-;;;; Mini Modeline
-(straight-use-package 'mini-modeline)
-
-(setup (:require mini-modeline)
-  (mini-modeline-mode))
-
 (provide 'pure-ui)
 
 ;;;; Diredfl
