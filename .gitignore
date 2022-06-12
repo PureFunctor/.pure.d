@@ -11,3 +11,7 @@ transient/
 .org-id-locations
 org-roam.db
 bookmarks
+request/
+workspace/
+mastodon.plstore
+forge-database.sqlite
