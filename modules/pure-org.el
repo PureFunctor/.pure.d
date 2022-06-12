@@ -42,7 +42,7 @@
 (straight-use-package 'org-roam)
 
 (setup (:require org-roam)
-  (:option org-roam-directory "~/PureFunctor/Org/Roam/roam"
+  (:option org-roam-directory "~/PureFunctor/journal"
            org-roam-completion-everywhere t
            org-roam-v2-ack t)
 
