@@ -21,8 +21,7 @@
 (straight-use-package 'avy)
 
 (setup (:require avy)
-  (:global "C-c f w" avy-goto-word-1
-	   "C-c f t" avy-goto-line))
+  (:global "C-;" avy-goto-char-timer))
 
 ;;; Ibuffer
 (setup (:require ibuffer)
