@@ -14,14 +14,14 @@
            org-agenda-files (list org-directory)
            org-hide-emphasis-markers t
            org-edit-src-content-indentation 0)
-  (:hook org-indent-mode))
+  (:hook org-indent-mode variable-pitch-mode))
 
 ;;;; Org Superstar
 (straight-use-package 'org-superstar)
 
 (setup (:require org-superstar)
   (:option org-superstar-leading-bullet " "
-           org-superstar-headline-bullets-list '(?◈))
+           org-superstar-headline-bullets-list '(?∃ ?∀ ?⊢))
   (:hook-into org-mode-hook))
 
 ;;;; Ox Hugo
@@ -29,6 +29,14 @@
 
 (with-eval-after-load 'ox
   (require 'ox-hugo))
+
+;;;; Visual Fill Column
+(straight-use-package 'visual-fill-column)
+
+(setup (:require visual-fill-column)
+  (:option visual-fill-column-width 105
+           visual-fill-column-center-text t)
+  (:hook-into org-mode-hook))
 
 ;;;; Org Roam
 (straight-use-package 'org-roam)
