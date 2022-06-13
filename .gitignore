@@ -15,3 +15,5 @@ request/
 workspace/
 mastodon.plstore
 forge-database.sqlite
+perspective
+custom.el

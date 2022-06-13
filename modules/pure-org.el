@@ -14,7 +14,7 @@
            org-agenda-files (list org-directory)
            org-hide-emphasis-markers t
            org-edit-src-content-indentation 0)
-  (:hook org-indent-mode variable-pitch-mode))
+  (:hook org-indent-mode variable-pitch-mode visual-line-mode))
 
 ;;;; Org Superstar
 (straight-use-package 'org-superstar)

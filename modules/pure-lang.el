@@ -38,8 +38,7 @@
 (straight-use-package 'flycheck)
 
 (setup (:require flycheck)
-  (:global "M-p" flycheck-buffer
-           "M-[" flycheck-previous-error
+  (:global "M-[" flycheck-previous-error
            "M-]" flycheck-next-error)
   (:option flycheck-check-syntax-automatically '(save)))
 

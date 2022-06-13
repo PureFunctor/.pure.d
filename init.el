@@ -19,3 +19,4 @@
 (require 'pure-projects)
 (require 'pure-org)
 (require 'pure-lang)
+(require 'pure-extra)

@@ -20,6 +20,8 @@
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-x C-z"))
 
+(setq custom-file "~/.emacs.d/custom.el")
+
 (provide 'pure-defaults)
 
 ;;; pure-defaults.el ends here
